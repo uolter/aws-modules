@@ -17,9 +17,10 @@ variable "vpc_name" {
   description = "The name of the vpc."
 }
 
-variable "owner" {
-  type        = string
-  description = "The Owner tag"
+variable "tags" {
+  type        = map(string)
+  description = "A map of tags, each pair."
+  default     = null
 }
 
 variable "public_subnets_cidr" {
@@ -77,4 +78,3 @@ variable "enable_nat_gateway" {
 locals {
   internet_gateway_name = "${var.vpc_name}-${var.environment}-igw"
 }
-
