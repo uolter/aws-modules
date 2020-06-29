@@ -24,7 +24,7 @@ resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 
   tags = merge({
-    Name        = "${local.internet_gateway_name}-igw"
+    Name        = "${var.vpc_name}-${var.environment}-igw"
     Environment = var.environment
   }, var.tags)
 }

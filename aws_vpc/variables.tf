@@ -74,7 +74,3 @@ variable "enable_nat_gateway" {
   description = "Enable nat gateway"
   default     = false
 }
-
-locals {
-  internet_gateway_name = "${var.vpc_name}-${var.environment}-igw"
-}
